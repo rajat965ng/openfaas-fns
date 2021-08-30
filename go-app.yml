@@ -1,0 +1,12 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8001
+functions:
+  go-app:
+    lang: golang-http
+    handler: ./go-app
+    image: rajat965ng/go-app:latest
+    build_args:
+      GO111MODULE: on
+

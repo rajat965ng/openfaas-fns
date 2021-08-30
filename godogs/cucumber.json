@@ -1,0 +1,69 @@
+[
+    {
+        "uri": "features/godogs.feature",
+        "id": "get-body",
+        "keyword": "Feature",
+        "name": "get body",
+        "description": "  In order to test openfaas response\n  As an API user\n  I need to be able to request user payload",
+        "line": 2,
+        "comments": [
+            {
+                "value": "# file: version.feature",
+                "line": 1
+            }
+        ],
+        "elements": [
+            {
+                "id": "get-body;allow-post-method",
+                "keyword": "Scenario",
+                "name": "allow POST method",
+                "description": "",
+                "line": 7,
+                "type": "scenario",
+                "steps": [
+                    {
+                        "keyword": "When ",
+                        "name": "I send \"POST\" request to \"http://localhost:8001/function/go-app\"",
+                        "line": 8,
+                        "match": {
+                            "location": "api_test.go:25"
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 14298874
+                        }
+                    },
+                    {
+                        "keyword": "Then ",
+                        "name": "the response code should be 200",
+                        "line": 9,
+                        "match": {
+                            "location": "api_test.go:53"
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 47920
+                        }
+                    },
+                    {
+                        "keyword": "And ",
+                        "name": "the response should match json:",
+                        "line": 10,
+                        "doc_string": {
+                            "value": "{\"name\":\"testUser\",\"age\":18}",
+                            "content_type": "",
+                            "line": 11
+                        },
+                        "match": {
+                            "location": "api_test.go:60"
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 38617
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
